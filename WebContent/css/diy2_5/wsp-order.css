@@ -1,0 +1,364 @@
+/*基础样式重置==================================================================================================================================================*/
+* {box-sizing: border-box;}
+html,body,div,header,main,article,footer,section,aside,nav,hgroup,ul,li,h1,h2,h3,h4,dl,dt,dd,p,a,span,i,em,img,input,textarea { margin:0; padding:0;}
+header,main,article,footer,section,aside,nav {display: block;}  /*添加安卓对H5新标签的支持*/
+html,body { font-family:"Microsoft yahei", Helvetica, Arial, sans-serif; }
+h1,h2,h3,h4,h5{font-weight:normal;}  /*初始化标题加粗*/
+a,img,input{ border:none 0; text-decoration:none;outline:none; }
+a:hover { text-decoration:none; }
+a:focus,input:focus { outline:0 none;} /*获取焦点时，不显示外框*/
+li { list-style:none; }
+i,em,cite { font-style:normal;}
+a { text-decoration:none; outline:none; -webkit-tap-highlight-color:rgba(0,0,0,0); }
+span{-webkit-tap-highlight-color:rgba(0,0,0,0);}
+input,textarea,li{-webkit-tap-highlight-color:rgba(0,0,0,0); }/*消除点击高光*/
+textarea { resize:none; font-size:12px;outline: none 0;border:none 0; } /*去掉火狐和谷歌浏览器的Textarea改变尺寸大小功能*/
+textarea ,input {-webkit-appearance: none;}
+input::-webkit-input-placeholder,textarea::-webkit-input-placeholder{color:#ddd;font-size:12px;}/*定义placeholder字体样式*/
+html {font-size: 62.5%;width: 100%;height: 100%;}
+body {width: 100%;height: 100%;}
+.clearfix{zoom:1;}
+.clearfix:after{content:'';display:block;height:0;clear:both;overflow:hidden;}
+::-webkit-scrollbar {width: 0;}
+* {
+-webkit-touch-callout:none;
+-webkit-user-select:none;
+-khtml-user-select:none;
+-moz-user-select:none;
+-ms-user-select:none;
+user-select:none;
+}
+/*基础样式重置==================================================================================================================================================*/
+/*取消滚动条*/
+::-webkit-scrollbar {
+    display: none;
+}
+body {
+	background: rgb(245,245,245);
+}
+@media only screen and (max-width: 743px){
+	html {
+		font-size: 62.5% !important;
+	}
+}
+.ellipsis {
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+}
+/*=============================================================================================================================================================*/
+.main-container {
+	position: relative;
+	width: 100%;
+/*	overflow-x: hidden;
+	overflow-y: scroll;
+	overflow-scrolling: touch; 
+	-webkit-overflow-scrolling: touch;*/
+}
+.container-inner {
+	width: 100%;
+	/*overflow-x: hidden;
+	overflow-y: scroll;
+	overflow-scrolling: touch; 
+	-webkit-overflow-scrolling: touch;*/
+}
+.load-more {
+	visibility: hidden;
+	position: relative;
+	width: 100%;
+	color: #a7a5a5;
+	text-align: center;
+	font-size: 14px;
+	padding-bottom: 30px;
+}
+.load-more i {
+	display: inline-block;
+	margin: 0 5px 5px;
+	width: 100px;
+	height: 1px;
+}
+.load-more .left-grad-line {
+	margin-right: 5px;
+	background: linear-gradient(to right, #d9d9d9, #f5f5f5);
+	background: -webkit-linear-gradient(right, #d9d9d9, #f5f5f5);
+}
+.load-more .right-grad-line {
+	margin-left: 5px;
+	background: linear-gradient(to left, #d9d9d9, #f5f5f5);
+	background: -webkit-linear-gradient(left, #d9d9d9, #f5f5f5);
+}
+.custom-page-group {
+	position: relative;
+	background: rgb(245,245,245);
+	width: 100%;
+	height: 100%;
+	margin: 0 auto;
+}
+.custom-page {
+	position: relative;
+	/*flex-grow: 1;*/
+	min-width: 100%;
+	max-width: 100%;
+	height: 100%;
+	background: rgb(245,245,245);
+	overflow-x: hidden;
+	overflow-y: scroll;
+	overflow-scrolling: touch; 
+	-webkit-overflow-scrolling: touch;
+}
+.page-inner {
+	width: 100%;
+}
+/*===========================================================================================================*/
+.carousel {
+	background: #fff;
+	overflow: hidden;
+}
+.inscribe .carousel {
+	border-bottom-left-radius: 360px 40px;
+	border-bottom-right-radius: 360px 40px;
+}
+.carousel-head {
+	width: 100%;
+	padding: 10px 15px;
+	font-size: 12px;
+	color: #646464;
+}
+.more-ico {
+	display: inline-block;
+	margin-left: 5px;
+	height: 9px;
+}
+.carousel-head a {
+	float: right;
+	color: #646464;
+}
+.swiper-list {
+	background: #fff;
+	padding: 0 8px;
+}
+.swiper-card {
+	position: relative;
+	float: left;
+	margin-bottom: 10px;
+	width: calc(50vw - 13px);
+	height: 21.5vw;
+	background: #fff;
+}
+.swiper-card:nth-child(odd){
+	margin-right: 5px;
+}
+.swiper-card:nth-child(even){
+	margin-left: 5px;
+}
+.swiper-card  a {
+	display: block;
+	width: 100%;
+	height: 100%;
+}
+.swiper-list .swiper-card img {
+	width: 100%;
+	height: 100%;
+	border-radius: 3px;
+}
+.inscribe .swiper-slide {
+	padding-bottom: 24px;
+}
+.swiper-slide img {
+	position: relative;
+	display: block;
+	width: 100%;
+	height: 49vw;
+}
+.swiper-pagination span {
+	width: 6px;
+	height: 6px;
+	background: #fff;
+	opacity: .7;
+}
+.inscribe .swiper-pagination span {
+	width: 5px;
+	height: 5px;
+	background: rgb(254,65,87);
+}
+.swiper-pagination .swiper-pagination-bullet-active {
+	background: #fff;
+	opacity: 1;
+}
+/*===========================================================================================================*/
+.goods-container {
+}
+.goods-list {
+	position: relative;
+	padding: 10px 8px;
+}
+.goods-card {
+	float: left;
+	position: relative;
+	width: calc(50vw - 13px);
+	height: calc(54vw + 27px);
+	background: #fff;
+}
+.goods-card a::after {
+	content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    border: 1px solid #e0e0e0;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    width: 500%;
+    height: 500%;
+    -webkit-transform: scale(0.2);
+    transform: scale(0.2);
+    -webkit-transform-origin: left top;
+    transform-origin: left top;
+}
+.goods-card:nth-child(odd) {
+	margin: 0 5px 10px 0;
+}
+.goods-card:nth-child(even){
+	margin: 0 0 10px 5px;
+}
+.special .img-box {
+	width: 100%;
+	height: 100%;
+}
+.special .text-box {
+	position: absolute;
+	bottom: 0;
+	width: 100%;
+	background: rgba(222,211,202,.8);
+	padding:5px;
+	text-align: center;
+}
+.special .text-box-inner {
+	width: 100%;
+	height: 20vw;
+	border: 1px dotted #333;
+	color: rgb(93,95,90);
+}
+.special-name {
+	height: 6vw;
+	line-height: 6vw;
+	font-size: 16px;
+}
+.special .text-box-inner p {
+	height: 6vw;
+	line-height: 6vw;
+	font-size: 12px;
+}
+.special .click-enter {
+	position: relative;
+	width: 50%;
+	margin: 0 auto;
+}
+.special .click-enter::after {
+	content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    border: 1px solid rgb(95,91,92);
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    width: 200%;
+    height: 199%;
+    -webkit-transform: scale(0.5);
+    transform: scale(0.5);
+    -webkit-transform-origin: left top;
+    transform-origin: left top;
+}
+.click-enter span {
+	display: inline-block;
+	transform: rotate(90deg);
+	-webkit-transform: rotate(90deg);
+}
+.img-box {
+	position: relative;
+	width: 100%;
+	height: calc(50vw - 13px);
+}
+.main-container img[src='http://file.diy.51app.cn/uu20/placeholder.png'] {
+	width: 20vw;
+	height: 20vw;
+	position: absolute;
+	margin: auto;
+	left: 0;
+	right: 0;
+	top: 0;
+	bottom: 0;
+}
+.img-box img {
+	width: 100%;
+	height: 100%;
+	border: 0;
+}
+.text-box {
+	padding: 2vw 0;
+	text-align: center;
+}
+.goods-desc {
+	color: #000;
+	font-size: 14px;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+}
+.goods-price {
+	color: rgb(252,59,88);
+	font-size: 12px;
+}
+.goods-price b {
+	font-weight: normal;
+	font-size: 16px;
+}
+.inscribe-container	{
+	padding: 10px 0;
+}
+/**/
+/*.goods-card:nth-child(n)::before {
+	content: '';
+	display: block;
+	position: absolute;
+	top: 10%;
+	right: -8%;
+	width: 8%;
+	height: 3%;
+	background: url(../img/side-ico1.png);
+	background-size: cover;
+}
+.goods-card:nth-child(2n)::before {
+	content: '';
+	display: block;
+	position: absolute;
+	top: 50%;
+	right: -8%;
+	width: 8%;
+	height: 3%;
+	background: url(../img/side-ico2.png);
+	background-size: cover;
+}
+.goods-card:nth-child(n)::after {
+	content: '';
+	display: block;
+	position: absolute;
+	top: 50%;
+	left: -8%;
+	width: 8%;
+	height: 3%;
+	background: url(../img/side-ico1.png);
+	background-size: cover;
+}
+.goods-card:nth-child(2n)::after {
+	content: '';
+	display: block;
+	position: absolute;
+	top: 90%;
+	left: -8%;
+	width: 8%;
+	height: 3%;
+	background: url(../img/side-ico2.png);
+	background-size: cover;
+}*/
+/*=============================================================================================================================================================*/
+

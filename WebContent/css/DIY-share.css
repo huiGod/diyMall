@@ -1,0 +1,63 @@
+@charset "UTF-8";
+/*基础样式重置*/
+html,body,div,header,article,footer,section,aside,nav,hgroup,ul,ol,li,h1,h2,h3,h4,h5,h6,dl,dt,dd,p,a,span,i,em,strong,b,img,input,textarea { margin:0; padding:0;}
+html{font-size:10px}/*移动端用响应式单位：rem vw*/
+@media screen and (min-width:321px) and (max-width:375px){html{font-size:11px}}
+@media screen and (min-width:376px) and (max-width:414px){html{font-size:12px}}
+@media screen and (min-width:415px) and (max-width:639px){html{font-size:15px}}
+@media screen and (min-width:640px) and (max-width:719px){html{font-size:20px}}
+html,body { font-family:"Microsoft yahei",Helvetica, Arial, sans-serif; }
+h1,h2,h3,h4,h5{font-weight:normal;}  /*初始化标题加粗*/
+a,img,input{ border:none 0; text-decoration:none;outline:none; }
+a:hover { text-decoration:none; }
+a:focus,input:focus { outline:0 none;} /*获取焦点时，不显示外框*/
+li { list-style:none; }
+i,em,cite { font-style:normal;}
+a { text-decoration:none; outline:none; -webkit-tap-highlight-color:rgba(0,0,0,0); }
+input,textarea,li{-webkit-tap-highlight-color:rgba(0,0,0,0); }/*消除点击高光*/
+textarea { resize:none; font-size:12px;outline: none 0;border:none 0; } /*去掉火狐和谷歌浏览器的Textarea改变尺寸大小功能*/
+input[type="button"], input[type="submit"], input[type="reset"],textarea ,button{-webkit-appearance: none;}
+input::-webkit-input-placeholder,textarea::-webkit-input-placeholder{color:#ddd;font-size:12px;}/*定义placeholder字体样式*/
+button{outline:none 0;border:none 0;}
+.fl{float:left;}
+.fr{float:right;}
+.clearfix{zoom:1;}
+.clearfix:before{content: " ";height:0;display: block;clear:both;}
+.pos-rel{position:relative;}
+.diy-body{font-family:"Microsoft yahei";text-align:center;color:#fff;width:100%;height:100%;position:absolute;background-color:#ff294f; }
+.bg{position:absolute;top:0;left:0;bottom:0;right:0;width:100%;height:100%;background:#ff315f linear-gradient(#f05aa6,#F30A8C,#ff3565,#ff294f);background::#ff315f -webkit-linear-gradient(#f05aa6,#F30A8C,#ff3565,#ff294f);}
+.diy-nav{letter-spacing: .3rem;font-size:1.3rem;margin-top:1.5rem;}
+.mt3{margin-top:2.7rem;font-family:"宋体, Microsoft yahei";}
+.diy-h1{font-size: 2.6rem;border:1px solid #fff;line-height: 3rem;padding:2px;box-shadow: 0 0 5px rgba(255,255,255,.5);letter-spacing: 2px;}
+.diy-h3{font-size: 2rem;margin-top:10px;letter-spacing: 2px;}
+
+.circle1{background-color:rgba(255,255,255,.4);box-shadow:0 0 10px 3px #ff82be;opacity:.7;position:absolute;top:5vw;left:-8vw;width:22vw;height:22vw;border-radius: 50%;}
+.circle2{background-color:rgba(255,255,255,.4);box-shadow:0 0 10px #fe4e9d;opacity:.4;position:absolute;bottom:10vw;right:8vw;z-index:0;width:20vw;height:20vw;border-radius: 50%;}
+.productions{width:90%;}
+.main{overflow:hidden;font-size:1.7rem;}
+.mianBox{margin-bottom: 2rem;display: inline-block;position:relative;z-index: 1;}
+.fr-tip,.fl-tip{width:47.5%;}
+.fr-tip{text-align:left;position:relative;z-index: 2;}
+.fl-tip{text-align:right;}
+.btn{margin-top:2rem;font-family:"Microsoft yahei";font-weight:700;background:url(../images/btnBg.png) no-repeat center ;background-size:contain,100%;width:60%;height:5.5rem;font-size:1.9rem;line-height:4.5rem;font-style: italic;text-indent:-.6rem;}
+
+/*商务合作*/
+.provide-service{border-radius:3px;text-align:left;margin:10px auto;width:86vw;height:auto;background:rgba(255,255,255,.1);box-sizing: border-box;padding-left:5vw;font-size:1.8rem;line-height: 2.6rem;color:#fff;}
+.provide-service .orange{color:#fde90c;}
+.conn-tel{color:#fff;font-size:2.1rem;margin-top:0px;text-align:center;}
+.mt2{margin-top:1.5rem;}
+.nomb{margin-bottom: 0;}
+.navBar{position:fixed;top:0;left:0;width:100%;height:5rem;z-index:100;background-color:#000;}
+.mt3rem{top:5rem;}
+.goBack{font-size:1.6rem;line-height:5rem;display: block;float:left;color:#fff;padding-left:20px;}
+.navTitle{z-index:-1;position:absolute;top:0;left:0;width:100%;height:5rem;color:#fff;font-size:1.8rem;line-height: 5rem;font-weight:700;}
+
+@media (min-width:375px){
+	.productions{width:85%;}
+	.btn{margin-top:5rem;}
+}
+.ani1{animation: ani1 6s ease-in-out infinite;-webkit-animation: ani1 6s ease-in-out infinite;}
+@keyframes ani1{0%{opacity:.4;}50%{opacity:1;}100%{opacity:.4;}}
+@-webkit-keyframes ani1{0%{opacity:.4;}50%{opacity:1;}100%{opacity:.4;}}
+.delay{animation-delay: 3s;-webkit-animation-delay: 3s;}
+

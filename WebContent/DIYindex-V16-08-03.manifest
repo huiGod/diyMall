@@ -1,0 +1,23 @@
+CACHE MANIFEST
+#version 0.0.1
+#date: 08 03- 2 2016
+###alter this file for altered some line file
+
+CACHE:
+//g.alicdn.com/msui/sm/0.6.2/css/??sm.min.css,sm-extend.min.css
+css/css.css
+//g.alicdn.com/sj/lib/zepto/zepto.min.js
+//g.alicdn.com/msui/sm/0.6.2/js/??sm.min.js,sm-extend.min.js
+http://file.diy.51app.cn/wp/IntegralMall/44297406.png
+http://file.diy.51app.cn/wp/IntegralMall/2bd022a4.jpg
+http://file.diy.51app.cn/wp/IntegralMall/e8c013fd.jpg
+http://file.diy.51app.cn/wp/IntegralMall/fa26e20d.jpg
+http://file.diy.51app.cn/wp/IntegralMall/0fdbcd6b.jpg
+http://file.diy.51app.cn/wp/IntegralMall/b671d858.jpg
+ 
+
+NETWORK:
+
+FALLBACK:
+offline.html
+ 

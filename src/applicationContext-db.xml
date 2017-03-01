@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="utf-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:p="http://www.springframework.org/schema/p"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:aop="http://www.springframework.org/schema/aop"
+       xmlns:task="http://www.springframework.org/schema/task"
+       xmlns:tx="http://www.springframework.org/schema/tx"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+    http://www.springframework.org/schema/beans/spring-beans-4.2.xsd
+    http://www.springframework.org/schema/context
+    http://www.springframework.org/schema/context/spring-context-4.2.xsd
+    http://www.springframework.org/schema/task
+    http://www.springframework.org/schema/task/spring-task-4.2.xsd
+    http://www.springframework.org/schema/aop
+    http://www.springframework.org/schema/aop/spring-aop-4.2.xsd
+    http://www.springframework.org/schema/tx 
+	http://www.springframework.org/schema/tx/spring-tx-4.2.xsd">
+ 
+	<!-- 
+	maxIdle，最大空闲数，数据库连接的最大空闲时间。超过空闲时间，数据库连接将被标记为不可用，然后被释放。设为0表示无限制。
+	MaxActive，连接池的最大数据库连接数。设为0表示无限制。
+	maxWait ，最大建立连接等待时间。如果超过此时间将接到异常。设为-1表示无限制。
+	 -->
+	
+	<bean id="dataSource" class="com.alibaba.druid.pool.DruidDataSource" init-method="init" destroy-method="close">   
+	    <!-- 基本属性 url、user、password -->  
+	    <property name="url" value="${jdbc.url}" />  
+	    <property name="username" value="${jdbc.username}" />  
+	    <property name="password" value="${jdbc.password}" />  
+	        
+	    <!-- 配置初始化大小、最小、最大 -->  
+	    <property name="initialSize" value="${jdbc.initialPoolSize}" />  
+	    <property name="minIdle" value="${jdbc.minPoolSize}" />   
+	    <property name="maxActive" value="${jdbc.maxPoolSize}" />
+	   
+	    <!-- 配置获取连接等待超时的时间 -->  
+	    <property name="maxWait" value="60000" />  
+	   
+	    <!-- 配置间隔多久才进行一次检测，检测需要关闭的空闲连接，单位是毫秒 -->  
+	    <property name="timeBetweenEvictionRunsMillis" value="60000" />  
+	   
+	    <!-- 配置一个连接在池中最小生存的时间，单位是毫秒 -->  
+	    <property name="minEvictableIdleTimeMillis" value="300000" />  
+	    
+	    <property name="validationQuery" value="SELECT 'x'" />  
+	    <property name="testWhileIdle" value="true" />  
+	    <property name="testOnBorrow" value="false" />  
+	    <property name="testOnReturn" value="false" />  
+	   
+	    <!-- 打开PSCache，并且指定每个连接上PSCache的大小 -->  
+	    <property name="poolPreparedStatements" value="true" />  
+	    <property name="maxPoolPreparedStatementPerConnectionSize" value="20" />  
+	   
+	    <!-- 配置监控统计拦截的filters，去掉后监控界面sql无法统计 -->  
+	    <property name="filters" value="stat" />   
+	</bean>  
+	
+	<bean id="transactionManager"
+		class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
+		<property name="dataSource" ref="dataSource" />
+	 </bean>
+   <tx:annotation-driven/>
+	
+	<!-- jdbcTemplate -->
+	<bean id="jt" class="org.springframework.jdbc.core.JdbcTemplate">
+		<property name="dataSource" ref="dataSource" />
+	</bean>
+	
+	<bean id="npjt"
+        class="org.springframework.jdbc.core.namedparam.NamedParameterJdbcTemplate" abstract="false"
+        lazy-init="false" autowire="default" >
+        <constructor-arg ref="dataSource" /> 
+	</bean>
+    
+    <bean name="ocsServer" class="java.net.InetSocketAddress">
+	    <constructor-arg>
+	      <value>${ocs.host}</value>
+	    </constructor-arg>
+	    <constructor-arg>
+	      <value>${ocs.port}</value>
+	    </constructor-arg>
+	</bean>
+    <bean name="ocsClient" class="net.rubyeye.xmemcached.utils.XMemcachedClientFactoryBean">
+        <property name="servers">
+            <value>${ocs.host}:${ocs.port}</value>
+        </property>
+        <property name="authInfoMap">
+	      <map>
+	        <entry key-ref="ocsServer">
+	          <bean class="net.rubyeye.xmemcached.auth.AuthInfo"
+	            factory-method="plain">
+	            <constructor-arg>
+	              <value>${ocs.username}</value>
+	            </constructor-arg>
+	            <constructor-arg>
+	              <value>${ocs.password}</value>
+	            </constructor-arg>
+	          </bean>
+	        </entry>
+	      </map>
+	    </property>
+        <property name="connectionPoolSize" value="${ocs.connectionPoolSize}"></property>
+        <!-- Use binary protocol,default is TextCommandFactory -->
+        <property name="commandFactory">
+            <bean class="net.rubyeye.xmemcached.command.BinaryCommandFactory"></bean>
+        </property>
+        <!-- Distributed strategy -->
+        <property name="sessionLocator">
+            <bean class="net.rubyeye.xmemcached.impl.KetamaMemcachedSessionLocator"></bean>
+        </property>
+        <!-- Serializing transcoder -->
+        <property name="transcoder">
+            <bean class="net.rubyeye.xmemcached.transcoders.SerializingTranscoder"/>
+        </property>
+        <!-- ByteBuffer allocator -->
+        <property name="bufferAllocator">
+            <bean class="net.rubyeye.xmemcached.buffer.SimpleBufferAllocator"></bean>
+        </property>
+    </bean>
+    
+    
+</beans>

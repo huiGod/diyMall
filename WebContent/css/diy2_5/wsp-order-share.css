@@ -1,0 +1,245 @@
+/*基础样式重置==================================================================================================================================================*/
+* { box-sizing: border-box;}
+html,body,div,header,main,article,footer,section,aside,nav,hgroup,ul,li,h1,h2,h3,h4,dl,dt,dd,p,a,span,i,em,img,input,textarea { margin:0; padding:0;}
+header,main,article,footer,section,aside,nav {display: block;}  /*添加安卓对H5新标签的支持*/
+html,body { font-family:"Microsoft yahei", Helvetica, Arial, sans-serif; }
+h1,h2,h3,h4,h5{font-weight:normal;}  /*初始化标题加粗*/
+a,img,input{ border:none 0; text-decoration:none;outline:none; }
+a:hover { text-decoration:none; }
+a:focus,input:focus { outline:0 none;} /*获取焦点时，不显示外框*/
+li { list-style:none; }
+i,em,cite { font-style:normal;}
+a { text-decoration:none; outline:none; -webkit-tap-highlight-color:rgba(0,0,0,0); }
+span{-webkit-tap-highlight-color:rgba(0,0,0,0);}
+input,textarea,li{-webkit-tap-highlight-color:rgba(0,0,0,0); }/*消除点击高光*/
+textarea { resize:none; font-size:12px;outline: none 0;border:none 0; } /*去掉火狐和谷歌浏览器的Textarea改变尺寸大小功能*/
+textarea ,input {-webkit-appearance: none;}
+input::-webkit-input-placeholder,textarea::-webkit-input-placeholder{color:#ddd;font-size:12px;}/*定义placeholder字体样式*/
+body{font-family: "Microsoft yahei";}
+.clearfix{zoom:1;}
+.clearfix:after{content:'';display:block;height:0;clear:both;overflow:hidden;}
+/*基础样式重置==================================================================================================================================================*/
+html {
+	font-size: 62.5%;
+}
+@media screen and (min-width:743px) {
+	html {
+		font-size: 12px;
+	}
+}
+html,body {
+	width: 100%;
+	height: 100%;
+}
+.swiper-pagination-bullet-active {
+	background: rgb(254,63,86) !important;
+}
+.share,
+.free-buy-share {
+	width: 100%;
+	height: 100%;
+	background: rgb(245,245,245);
+}
+.view-container {
+	position: relative;
+	width: 100%;
+	padding-bottom: 50px;
+	overflow-x: hidden;
+	overflow-y: scroll;
+	-webkit-overflow-scrolling: touch;
+}
+.swiper-slide img {
+	display: block;
+	margin: 0 auto;
+	max-width: 100%;
+	max-height: 100vw;
+}
+.describe-container {
+	padding: 15px;
+	background: #fff;
+	width: 100%;
+}
+.describe-container h1 {
+	position: relative;
+	margin: 0;
+	height: 30px;
+	font-size: 1.8rem;
+	font-weight: normal;
+	line-height: 30px;
+	vertical-align: middle;
+}
+.describe-container h1 img {
+	vertical-align: middle;
+	width: 30px;
+	height: 30px;
+	border-radius: 50%;
+}
+.describe-container h2 {
+	position: relative;
+	margin: 0;
+	height: 30px;
+	font-size: 1.6rem;
+	line-height: 30px;
+}
+.describe-container p {
+	margin: 0;
+	color: #999;
+	line-height: 30px;
+	font-size: 1.4rem;
+	overflow: hidden;
+	text-overflow: ellipsis;
+}
+/*===================================================================================================================================*/
+.toolbar {
+	position: fixed;
+	left: 0;
+	bottom: 0;
+	width: 100%;
+	background: #fff;
+	height: 44px;
+	line-height: 44px;
+	z-index: 500;
+}
+.toolbar>div {
+	width: 100%;
+	height: 100%;
+	text-align: center;
+}
+.download-bar {
+	/*background: rgb(255,156,0);*/
+	background: rgb(254,63,86);
+}
+.help-bar {
+	background: rgb(254,63,86);
+}
+.download-bar a,
+.help-bar a {
+	display: block;
+	width: 100%;
+	height: 100%;
+	color: #fff;
+	font-size: 18px;
+}
+.download-bar a span {
+	font-size: 20px;
+}
+/*================================================================================================================*/
+.work-desc {
+	position: relative;
+	width: 100%;
+}
+.price-info {
+	display: flex;
+	display: -webkit-flex;
+	align-items: center;
+	white-space: nowrap;
+	border-bottom: 1px solid rgb(229,229,229);
+	background: #fff;
+}
+.price-info p {
+	padding: 10px;
+}
+.now-price {
+	font-size: 1.8rem;
+	color: rgb(254,63,86);
+}
+.org-price {
+	font-size: 1.6rem;
+	color: rgb(152,143,125);
+}
+.author-info {
+	position: relative;
+	padding: 10px;
+	width: 100%;
+	font-size: 1.6rem;
+	background: #fff;
+}
+.author-name {
+	display: flex;
+	display: -webkit-flex;
+	align-items: center;
+	color: rgb(56,12,17);
+}
+.author-name img {
+	width: 3rem;
+	height: 3rem;
+	border-radius: 1.5rem;
+	margin-right: 10px;
+}
+.author-autograph {
+	padding-top: 10px;
+	color: #333;
+}
+.tip-copy {
+	padding: 0 10px;
+	background: #fff;
+}
+.tip-article {
+	padding: 10px 15px;
+	font-size: 16px;
+	border: 2px dashed rgb(254,63,86);
+}
+.tip-article i {
+	color: rgb(2,120,200);
+	font-style: italic;
+	text-decoration: underline;
+}
+.bar-code {
+	position: relative;
+	width: 100%;
+	background: #fff;
+}
+.bar-code-inner {
+	width: 100%;
+	height: 100%;
+	padding: 10px;
+	font-size: 1.4rem;
+}
+.bar-code-inner h3{
+	font-weight: bold;
+}
+.bar-code-inner p {
+	font-size: 14px;
+}
+.bar-code-inner p span {
+	color: rgb(251,77,103);
+}
+.bar-code-inner .mark {
+	padding: 5px 50px;
+	color: #969696;
+}
+.bar-code-img {
+	width: 100%;
+	margin-top: 10px;
+	text-align: center;	
+}
+.bar-code-img img {
+	width: 50%;
+}
+.bolang {
+	display: block;
+	width: 100.15%;
+}
+.nodata-tip {
+	display: block;
+	width: 100%;
+	height: 100%;
+	line-height: 100%;
+	background: #eee;
+	position: absolute;
+	left: 0;
+	top: 0;
+	z-index: 1000;
+}
+.nodata-tip p {
+	position: absolute;
+	margin: auto;
+	top: 0;
+	bottom: 0;
+	width: 100%;
+	height: 30px;
+	line-height: 30px;
+	text-align: center;
+	font-size: 16px;
+	color: #2b2b2b;
+}

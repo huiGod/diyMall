@@ -1,0 +1,35 @@
+@charset "UTF-8";
+/*基础样式重置*/
+html,body,div,header,article,footer,section,aside,nav,hgroup,ul,ol,li,h1,h2,h3,h4,h5,h6,dl,dt,dd,p,a,span,i,em,strong,b,img,input,textarea,table,tr,td { margin:0; padding:0;}
+header,article,footer,section,aside,nav,hgroup{display: block;}
+html{font-size:10px}/*移动端用响应式单位：rem vw*/
+@media screen and (min-width:321px) and (max-width:375px){html{font-size:11px}}
+@media screen and (min-width:376px) and (max-width:414px){html{font-size:12px}}
+@media screen and (min-width:415px) and (max-width:639px){html{font-size:15px}}
+@media screen and (min-width:640px) and (max-width:719px){html{font-size:20px}}
+html,body { font-family:"Microsoft yahei",Helvetica, Arial, sans-serif; }
+h1,h2,h3,h4,h5{font-weight:normal;}  /*初始化标题加粗*/
+a,img,input{ border:none 0; text-decoration:none;outline:none; }
+a:hover { text-decoration:none; }
+a:focus,input:focus { outline:0 none;} /*获取焦点时，不显示外框*/
+li { list-style:none; }
+i,em,cite { font-style:normal;}
+a { text-decoration:none; outline:none; -webkit-tap-highlight-color:rgba(0,0,0,0); }
+input,textarea,li{-webkit-tap-highlight-color:rgba(0,0,0,0); }/*消除点击高光*/
+textarea { resize:none; font-size:12px;outline: none 0;border:none 0; } /*去掉火狐和谷歌浏览器的Textarea改变尺寸大小功能*/
+input[type="button"], input[type="submit"], input[type="reset"],input[type="text"],textarea {-webkit-appearance: none;} /*新增input[type="text"]*/
+input::-webkit-input-placeholder,textarea::-webkit-input-placeholder{color:#969696;font-size:1.2rem;}/*定义placeholder字体样式*/
+.pos-rel{position: relative;}
+.clearfix:after { content:" "; display:block; clear:both; height:0; }
+.clearfix {zoom:1;}
+.fl { float:left; }
+.fr { float:right; }
+.width100{width:100%;}
+.width18_75vw{width:18.75vw;}
+.shareWays{text-align:left;width:90vw;margin-left: 10vw;margin-top:45px;}
+.shareSection{position:absolute;top:50%;left:0;}
+.padding1{padding-bottom:25px;}
+.padding2{padding-bottom:35px;}
+.shareGift{position: absolute;left:0;bottom:0;width:100%;}
+#mcover{position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,0.9);display:none;z-index:20000;}
+#mcover img{position:fixed;right:0;top:0;width:100%;height:auto;z-index:20001;}

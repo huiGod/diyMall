@@ -1,0 +1,41 @@
+/*==============基础样式重置==============*/
+html,body,div,header,article,footer,section,aside,nav,hgroup,ul,ol,li,h1,h2,h3,h4,h5,h6,dl,dt,dd,p,a,span,i,em,strong,b,img,input,textarea { margin:0; padding:0;}
+html,body { font-family:"Microsoft yahei",Helvetica, Arial, sans-serif; }
+body{ line-height: 24px; background: #fff;}
+a,img,input{ border:0 none; text-decoration:none; outline:none; }
+li { list-style:none; }
+i,em,cite { font-style:normal;}
+a { text-decoration:none; outline:none; -webkit-tap-highlight-color:rgba(0,0,0,0); }
+input,textarea,li{-webkit-tap-highlight-color:rgba(0,0,0,0); }/*消除点击高光*/
+a:hover { text-decoration:none; }
+a:focus,input:focus { outline:0 none;}
+textarea { resize:none;}
+input[type="button"], input[type="submit"], input[type="reset"],textarea {-webkit-appearance: none;}
+/*========定义通用样式========*/
+.hide { display:none;}
+.clear { clear:both; }
+.fl { float:left; }
+.fr { float:right; }
+.clearfix:after { content:" "; display:block; clear:both; height:0; }
+.clearfix { zoom:1;}
+.line-h18{line-height: 18px;}
+.line-h121{line-height: 21px;}
+/*详情页*/
+body.details-abs{background: #edefef;position: absolute;top:0;width:100%;right:0;bottom:0;left:0;height:100%;}
+.nav{position:absolute;top:0;left:0;width:100%;box-sizing:border-box;height:38px;font-size:15px;color:#f00;background:#fff;padding:0 10px;border-top:1px solid #e6e7e7;border-bottom:1px solid #e6e7e7}
+.nav ul{width: 100%;}
+.nav ul li{width: 33.3%;float:left;text-align:center;line-height:38px;box-sizing: border-box;color:#333;}
+.nav ul li.clicked{border-bottom: 1px solid translate;color:#ff9c00;}
+.details{background:#fff;}
+/*详细内容*/
+.wrapper{border-top: 1px solid transparent;box-sizing: border-box;background:#fff;position: absolute;top:38px;left:0;right:0;width:100%;bottom:0;overflow: auto;-webkit-overflow-scrolling:touch;}
+.detail-1{padding:0 10px;}
+.detail-1 img{width:100%;display: block;min-height:300px;background: url(../images/loading.gif) 50% no-repeat;}
+.detail-2,.detail-3{margin-top:10px;}
+.detail-2 ul li,.detail-3 ul li{border-bottom:1px solid #ebebeb;position:relative;padding:10px 0;padding-left:6em;font-size:14px;color:#868686;}
+.detail-2 ul li span,.detail-3 ul li span{position:absolute;left:10px;top:10px;color:#868686;}
+.detail-2 ul li div,.detail-3 ul li input{width:90%;font-size:14px;}
+.detail-3 ul li .price-D{padding-top:2px;width:90%;border:none 0;outline:none;line-height: 21px;font-size:14px;color:#000;}
+.detail-2 ul li div{color:#000;}
+#gotoTop{position: fixed;bottom:40px;right:20px;width:30px;height:30px;background:#fff;z-index: 999;border-radius: 50%;}
+#gotoTop img{width:100%;}

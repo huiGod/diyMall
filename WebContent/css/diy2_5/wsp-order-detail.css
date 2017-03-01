@@ -1,0 +1,208 @@
+/*基础样式重置==================================================================================================================================================*/
+* {box-sizing: border-box;}
+html,body,div,header,main,article,footer,section,aside,nav,hgroup,ul,li,h1,h2,h3,h4,dl,dt,dd,p,a,span,i,em,img,input,textarea { margin:0; padding:0;}
+header,main,article,footer,section,aside,nav {display: block;}  /*添加安卓对H5新标签的支持*/
+html,body { font-family:"Microsoft yahei", Helvetica, Arial, sans-serif; }
+h1,h2,h3,h4,h5{font-weight:normal;}  /*初始化标题加粗*/
+a,img,input{ border:none 0; text-decoration:none;outline:none; }
+a:hover { text-decoration:none; }
+a:focus,input:focus { outline:0 none;} /*获取焦点时，不显示外框*/
+li { list-style:none; }
+i,em,cite { font-style:normal;}
+a { text-decoration:none; outline:none; -webkit-tap-highlight-color:rgba(0,0,0,0); }
+span{-webkit-tap-highlight-color:rgba(0,0,0,0);}
+input,textarea,li{-webkit-tap-highlight-color:rgba(0,0,0,0); }/*消除点击高光*/
+textarea { resize:none; font-size:12px;outline: none 0;border:none 0; } /*去掉火狐和谷歌浏览器的Textarea改变尺寸大小功能*/
+textarea ,input {-webkit-appearance: none;}
+input::-webkit-input-placeholder,textarea::-webkit-input-placeholder{color:#ddd;font-size:12px;}/*定义placeholder字体样式*/
+html {font-size: 62.5%;width: 100%;height: 100%;}
+body {width: 100%;height: 100%;}
+@media screen and (min-width: 743px) {html {font-size: 100%;}}
+.clearfix{zoom:1;}
+.clearfix:after{content:'';display:block;height:0;clear:both;overflow:hidden;}
+::-webkit-scrollbar {width: 0;}
+/*基础样式重置================================================================================================================================================*/
+/*=============================================================================================================================================================*/
+.custom-bar {
+	position: fixed;
+	display: flex;
+	display: -webkit-flex;
+	justify-content: center;
+	width: 100%;
+	height: 50px;
+	line-height: 50px;
+	border-bottom: 1px solid #ddd;
+	background: #fff;
+	z-index: 5;
+}
+.custom-tab-link {
+	display: block;
+	margin: 0 2rem;
+	color: #666;
+	font-size: 1.8rem;
+}
+.custom-tab-link.active {
+	color: #000;
+	border-bottom: 3px solid rgb(254,65,87);
+}
+/*=============================================================================================================================================================*/
+.toolbar {
+	position: fixed;
+	left: 0;
+	bottom: 0;
+	width: 100%;
+	height: 70px;
+	line-height: 70px;
+	text-align: center;
+	border-top: 1px solid #ddd;
+	background: #fff;
+	z-index: 5;
+}
+.start-order {
+	padding: 12px 50px;
+	font-size: 1.8rem;
+	color: #fff;
+	letter-spacing: 1px;
+	background: rgb(255,63,86);
+	border-radius: 50px;
+	box-shadow: 0 10px 10px #eee;
+}
+@media screen and (min-width: 743px){
+	.start-order {
+		font-size: 1.2rem;
+	}
+}
+/*=============================================================================================================================================================*/
+.main-container {
+	position: relative;
+	width: 100%;
+	height: 100%;
+	overflow: hidden;
+}
+.page-group {
+	position: relative;
+	display: flex;
+	display: -webkit-flex;
+	width: 100%;
+	height: 100%;
+}
+.page {
+	flex: 1;
+	-webkit-flex: 1;
+	min-width: 100%;
+	max-height: 100%;
+	height: 100%;
+	overflow: hidden;
+}
+/*=============================================================================================================================================================*/
+.tab-nav {
+	position: fixed;
+	padding: 11px 0;
+	display: flex;
+	display: -webkit-flex;
+	width: 100%;
+	border-bottom: 1px solid #eeefff;
+	background: #fff;
+	z-index: 3;
+}
+.tab-item {
+	flex: 1;
+	-webkit-flex: 1;
+	color: #666;
+	text-align: center;
+	font-size: 1.3rem;
+}
+.tab-item.active {
+	color: rgb(255,65,87);
+}
+.detail-page-group {
+	width: 100%;
+	height: 100%;
+	overflow: hidden;
+}
+.detail-page-group-inner {
+	position: relative;
+	right: 0;
+	display: flex;
+	display: -webkit-flex;
+	width: 100%;
+	height: 100%;
+	padding-top: 40px;
+}
+.detail-page {
+	position: relative;
+	flex: 1;
+	-webkit-flex: 1;
+	min-width: 100%;
+	max-width: 100%;
+	overflow-x: hidden;
+	overflow-y: scroll;
+	-webkit-overflow-scrolling: touch;
+}
+/*详情--定制介绍====================================================*/
+.video-container {
+	display: none;
+	position: relative;
+	margin: 1rem auto 0;
+	width: 95%;
+	border: 1px solid #eee;
+	border-left: 0;
+	padding: 0 1rem 1rem 0;
+}
+.video-container p {
+	position: absolute;
+	font-size: 1.5rem;
+	color: #999;
+	background: #fff;
+	top: -1rem;
+}
+.video-container video {
+	width: 100%;
+	height: 100%;
+}
+.video-overlay {
+	position: absolute;
+	top: 0;
+	height: 0;
+	width: 100%;
+	height: 100%;
+}
+.img-container {
+	position: relative;
+	width: 100%;
+	text-align: center;
+}
+.img-container img {
+	width: 100%;
+	display: block;
+}
+.img-container img[src='http://file.diy.51app.cn/uu20/placeholder.png'] {
+	display: block;
+	margin: 35vw auto;
+	width: 30vw;
+	height: 30vw;
+}
+/*详情--规格参数&包装售后===========================================*/
+.spec p,
+.pack p {
+	display: flex;
+	display: -webkit-flex;
+	font-size: 14px;
+	padding: 1rem 0;
+	border-bottom: 1px solid #eee;
+}
+.spec p span.detail-title,
+.pack p span.detail-title {
+	flex: 1;
+	-webkit-flex: 1;
+	color: #868686;
+	text-align: right;
+}
+.spec p span.detail-desc,
+.pack p span.detail-desc {
+	flex: 3;
+	-webkit-flex: 3;
+	padding: 0 3vw 0 5vw;
+}
+/*=============================================================================================================================================================*/
+

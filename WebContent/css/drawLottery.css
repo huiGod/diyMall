@@ -1,0 +1,58 @@
+@charset "UTF-8";
+/*基础样式重置*/
+html,body,div,header,article,footer,section,aside,nav,hgroup,ul,ol,li,h1,h2,h3,h4,h5,h6,dl,dt,dd,p,a,span,i,em,strong,b,img,input,textarea,main { margin:0; padding:0;}
+html{font-size:10px}/*移动端用响应式单位：rem vw*/
+@media screen and (min-width:321px) and (max-width:375px){html{font-size:11px}}
+@media screen and (min-width:376px) and (max-width:414px){html{font-size:12px}}
+@media screen and (min-width:415px) and (max-width:639px){html{font-size:15px}}
+@media screen and (min-width:640px) and (max-width:719px){html{font-size:20px}}
+html,body { font-family:"Microsoft yahei",Helvetica, Arial, sans-serif; }
+h1,h2,h3,h4,h5{font-weight:normal;}  /*初始化标题加粗*/
+a,img,input{ border:none 0; text-decoration:none;outline:none; }
+a:hover { text-decoration:none; }
+a:focus,input:focus { outline:0 none;} /*获取焦点时，不显示外框*/
+li { list-style:none; }
+i,em,cite { font-style:normal;}
+a { text-decoration:none; outline:none; -webkit-tap-highlight-color:rgba(0,0,0,0); }
+input,textarea,li{-webkit-tap-highlight-color:rgba(0,0,0,0); }/*消除点击高光*/
+textarea { resize:none; font-size:12px;outline: none 0;border:none 0; } /*去掉火狐和谷歌浏览器的Textarea改变尺寸大小功能*/
+input[type="button"], input[type="submit"], input[type="reset"],textarea ,button{-webkit-appearance: none;}
+input::-webkit-input-placeholder,textarea::-webkit-input-placeholder{color:#ddd;font-size:12px;}/*定义placeholder字体样式*/
+button{outline:none 0;border:none 0;}
+.hide{display: none;}
+.fl{float:left;}
+.fr{float:right;}
+.clearfix{zoom:1;}
+.clearfix:before{content: " ";height:0;display: block;clear:both;}
+.pos-rel{position:relative;}
+.drawLottery-mask{width:100%;height:100%;position:absolute;top:0;left:0;background:rgba(0,0,0,.85);z-index:10;}
+.drawLotteryBanner,.drawLotteryClose{display: inline-block;}
+.drawLotteryBanner{width:100%;position:relative;z-index: 12;}
+.bannerImg,.drawLotteryClose img{width:100%;}
+.drawLotteryClose{position:absolute;top:0;right:0;z-index:13;width:12.5vw;height:12.5vw;padding:10px;padding-top:15px;}
+.drawLotteryMain{display: block;position: relative;z-index:14;margin-top:-25vw;height:90vw;}
+.pointer,.drawer{width:90vw;margin:0 auto;display: block;position:absolute;top:0;left:5vw;z-index:15;}
+.awardPool{padding-top:23vw;bottom:-32.5vw;height:32.5vw;font-family:"Microsoft yahei";position:absolute;z-index:13;left:11vw;text-align:center;color:#c33903;font-size:2rem;background:url(../images/awardPool.png) no-repeat center top;width:78vw;background-size:100%;}
+.awardPool h3{font-weight: 700;text-indent:.5rem;font-size:1.8rem;line-height: 2.4rem;margin-top:5px;}
+.award-p{font-size:1.6rem;}
+.turnPlate{overflow:hidden;width:100vw;height:90vw;margin:0 auto;}
+.autoTips{font-size:1.2rem;}
+.accessBtn{opacity:0;position:absolute;bottom:-6.5vw;left:50%;margin-left:-23.5vw;width:47vw;height:13vw;border-radius:10px;overflow:hidden;background:transparent url(../images/access.png) no-repeat center;background-size:100%;}
+.animal{animation:myani .5s ease-out;-webkit-animation:myani .5s ease-out;}
+@keyframes myani{
+	from{opacity:0;transform:translateY(-60%);}
+	to{opacity:1;transform:translateY(0);}
+}
+@-webkit-keyframes myani{
+	from{opacity:0;-webkit-transform:translateY(-60%);}
+	to{opacity:1;-webkit-transform:translateY(0);}
+}
+.animal2{animation:myani2 .5s ease-out forwards;-webkit-animation:myani2 .5s ease-out forwards;animation-delay: .3s;-webkit-animation-delay: .3s}
+@keyframes myani2{
+	from{opacity:0;}
+	to{opacity:1;}
+}
+@-webkit-keyframes myani2{
+	from{opacity:0;}
+	to{opacity:1;}
+}
